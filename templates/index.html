@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codvid-19</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo">c<span class="fas fa-virus"></span>ovid-19</a>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">home</a></li>
+            <li><a href="#protect">kasus</a></li>
+            <li><a href="#handwash">Handwash</a></li>
+            
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+
+        <span>Covid-19</span>
+        <h3>stay safe, stay home</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolores quibusdam ad sapiente quod harum recusandae esse voluptates repellat tempore.</p>
+        <a href="#protect" class="btn">Kasus</a>
+
+    </div>
+
+    <div class="image">
+        <img src="{{url_for('static', filename = 'images/home-img.png')}}" alt="">
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<section class="protect" id="protect">
+
+    <h1 class="heading">Jumlah Kasus <span>Codvid-19</span> Di Indonesia</h1>
+    
+    <div class="box-container">
+        {% for data in data_indo %}
+        <div class="box">
+            <img src="{{url_for('static', filename = 'images/protect-1.png')}}" alt="">
+            <h3>Positif</h3>
+            <h3>{{ data.positif }}</h3>
+            <h3>Orang</h3>
+        </div>
+
+        <div class="box">
+            <img src="{{url_for('static', filename = 'images/do-img.png')}}" alt="">
+            <h3>Sembuh</h3>
+            <h3>{{ data.sembuh}}</h3>
+            <h3>Orang</h3>
+            
+        </div>
+
+        <div class="box">
+            <img src="{{url_for('static', filename = 'images/virus.png')}}" alt="">
+            <h3>Meninggal</h3>
+            <h3>{{ data.meninggal }}</h3>
+            <h3>Orang</h3>
+        </div>
+        {% endfor %}
+    </div>
+   
+</section>
+
+
+
+
+<!-- handwash section starts  -->
+
+<section class="handwash" id="handwash">
+
+    <h1 class="heading">Cara <span>Mencuci Tangan</span> Dengan Benar</h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <span>1</span>
+            <img src="{{url_for('static', filename = 'images/hadnwash-1.png')}}" alt="">
+            <h3>Apply Soap on Hand</h3>
+        </div>
+
+        <div class="box">
+            <span>2</span>
+            <img src="{{url_for('static', filename = 'images/hadnwash-2.png')}}" alt="">
+            <h3>Palm to Palm</h3>
+        </div>
+
+        <div class="box">
+            <span>3</span>
+            <img src="{{url_for('static', filename = 'images/hadnwash-3.png')}}" alt="">
+            <h3>Between Fingers</h3>
+        </div>
+
+        <div class="box">
+            <span>4</span>
+            <img src="{{url_for('static', filename = 'images/hadnwash-4.png')}}" alt="">
+            <h3>Back of The Hands</h3>
+        </div>
+
+        <div class="box">
+            <span>5</span>
+            <img src="{{url_for('static', filename = 'images/hadnwash-5.png')}}" alt="">
+            <h3>clean with water</h3>
+        </div>
+
+        <div class="box">
+            <span>6</span>
+            <img src="{{url_for('static', filename = 'images/hadnwash-6.png')}}" alt="">
+            <h3>Use Towel to Dry</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- handwash section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>about us</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio rerum explicabo impedit aperiam non quod. Velit sunt voluptatem nemo beatae.</p>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <p> <i class="fas fa-phone"></i> +123-456-7890. </p>
+            <p> <i class="fas fa-envelope"></i> example@gmail.com </p>
+            <p> <i class="fas fa-map-marker-alt"></i> mumbai, indai - 400104. </p>
+            <div class="share">
+                <a href="#" class="fab fa-youtube"></a>
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> created by <a href="#"> mr. web designer </a> all rights reserved! </h1>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- scroll top  -->
+
+<a href="#home" class="scroll-top">
+    <img src="{{url_for('static', filename = 'images/scroll-img.png')}}" alt="">
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{{url_for('static', filename = 'js/script.js')}}"></script>
+
+
+</body>
+</html>
