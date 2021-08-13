@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codvid-19</title>
+    <title>SI-Covid19</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -13,12 +13,12 @@
 
 </head>
 <body>
-    
+
 <!-- header section starts  -->
 
 <header>
 
-    <a href="#" class="logo">c<span class="fas fa-virus"></span>ovid-19</a>
+    <a href="#" class="logo">c<span class="fas fa-virus"></span>dvid-19</a>
 
     <div id="menu" class="fas fa-bars"></div>
 
@@ -27,7 +27,7 @@
             <li><a class="active" href="#home">home</a></li>
             <li><a href="#protect">kasus</a></li>
             <li><a href="#handwash">Handwash</a></li>
-            
+
         </ul>
     </nav>
 
@@ -41,9 +41,9 @@
 
     <div class="content">
 
-        <span>Covid-19</span>
+        <span>Codvid-19</span>
         <h3>stay safe, stay home</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolores quibusdam ad sapiente quod harum recusandae esse voluptates repellat tempore.</p>
+        <p>Sistem Informasi Penyabaran Codvid-19 Di indonesia</p>
         <a href="#protect" class="btn">Kasus</a>
 
     </div>
@@ -59,9 +59,9 @@
 <section class="protect" id="protect">
 
     <h1 class="heading">Jumlah Kasus <span>Codvid-19</span> Di Indonesia</h1>
-    
+    {% for data in data_indo %}
     <div class="box-container">
-        {% for data in data_indo %}
+
         <div class="box">
             <img src="{{url_for('static', filename = 'images/protect-1.png')}}" alt="">
             <h3>Positif</h3>
@@ -72,9 +72,9 @@
         <div class="box">
             <img src="{{url_for('static', filename = 'images/do-img.png')}}" alt="">
             <h3>Sembuh</h3>
-            <h3>{{ data.sembuh}}</h3>
+            <h3>{{ data.sembuh }}</h3>
             <h3>Orang</h3>
-            
+
         </div>
 
         <div class="box">
@@ -83,9 +83,16 @@
             <h3>{{ data.meninggal }}</h3>
             <h3>Orang</h3>
         </div>
+
+        <div class="box">
+            <img src="{{url_for('static', filename = 'images/symptoms-img.png')}}" alt="">
+            <h3>Dirawat</h3>
+            <h3>{{ data.dirawat }}</h3>
+            <h3>Orang</h3>
+        </div>
         {% endfor %}
     </div>
-   
+
 </section>
 
 
@@ -149,14 +156,14 @@
 
         <div class="box">
             <h3>about us</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio rerum explicabo impedit aperiam non quod. Velit sunt voluptatem nemo beatae.</p>
+            <p>Sistem informasi codvid-19 di indonesia</p>
         </div>
 
         <div class="box">
             <h3>contact info</h3>
-            <p> <i class="fas fa-phone"></i> +123-456-7890. </p>
+            <p> <i class="fas fa-phone"></i> +6282-256-330-920 </p>
             <p> <i class="fas fa-envelope"></i> example@gmail.com </p>
-            <p> <i class="fas fa-map-marker-alt"></i> mumbai, indai - 400104. </p>
+            <p> <i class="fas fa-map-marker-alt"></i> sorong, papua barat, indonesia </p>
             <div class="share">
                 <a href="#" class="fab fa-youtube"></a>
                 <a href="#" class="fab fa-facebook-f"></a>
@@ -167,7 +174,7 @@
 
     </div>
 
-    <h1 class="credit"> created by <a href="#"> mr. web designer </a> all rights reserved! </h1>
+    <h1 class="credit"> created by <a href="#"> Wandy </a> all rights reserved! </h1>
 
 </section>
 
